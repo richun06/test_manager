@@ -1,0 +1,16 @@
+<h3>ラベル一覧</h3>
+<%= link_to "タスク一覧へ戻る", tasks_path %>
+<table>
+  <thead>
+    <tr>
+      <th><%= Label.human_attribute_name(:name) %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @labels.each do |label| %>
+      <tr>
+        <td><%= label.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
