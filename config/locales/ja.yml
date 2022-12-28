@@ -106,12 +106,15 @@ ja:
     models:
       task: 'タスク'
       user: 'ユーザー'
+      label: 'ラベル'
     attributes:
       task:
         title: 'タイトル'
         content: '内容'
       user:
         name: '名前'
+      label:
+        name: 'ラベル名'
     errors:
       models:
         care_user:
