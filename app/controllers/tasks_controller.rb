@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create] #/tasks/newに遷移しようとすると、ログイン画面に飛ばされる
+  before_action :authenticate_user! # , only: [:new, :create] #/tasks/newに遷移しようとすると、ログイン画面に飛ばされる
 
   def index
     @tasks = Task.all
