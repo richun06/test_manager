@@ -1,8 +1,9 @@
-<h2>タスク一覧</h2>
+<h2><%= current_user.name %>さんのタスク一覧</h2>
 <%= link_to "新規作成",new_task_path %>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>ユーザー名</th>
       <th><%= Task.human_attribute_name(:title) %></th>
       <th><%= Task.human_attribute_name(:content) %></th>
     </tr>
@@ -10,6 +11,7 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+        <td><%= task.user.name %></td>
         <td><%= task.title %></td>
         <td><%= task.content %></td>
         <td><%= link_to "詳細",task_path(task.id) %></td>
