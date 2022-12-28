@@ -9,4 +9,11 @@
   <%= @task.content %>
 </p>
 
+<p>
+  <strong><%= Label.human_attribute_name(:name) %></strong>
+  <% @task.labels.each do |label| %>
+    <td>・<%= label.name %></td>
+  <% end %>
+</p>
+
 <%= link_to "一覧へ戻る",tasks_path %>

@@ -8,6 +8,7 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+    @labels = Label.where(user_id: current_user.id)
   end
 
   def create
@@ -48,6 +49,6 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:title, :content, :user_id)
+    params.require(:task).permit(:title, :content, :user_id, { label_ids: [] })
   end
 end

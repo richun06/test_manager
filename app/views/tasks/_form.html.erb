@@ -20,5 +20,9 @@
     <%= form.text_field :content %>
   </div>
 
+  <div>
+    <%= form.collection_check_boxes(:label_ids, @labels, :id, :name) %>
+  </div>
+
   <%= form.submit "作成" %>
 <% end %>
