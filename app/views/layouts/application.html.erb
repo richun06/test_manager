@@ -12,10 +12,11 @@
 
   <body>
     <% if user_signed_in? %>
-      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <%= link_to "タスク投稿", tasks_path %>
+      <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
     <% else %>
-      <li><%= link_to 'ログイン', new_user_session_path %></li>
-      <li><%= link_to 'サインアップ', new_user_registration_path %></li>
+      <%= link_to 'ログイン', new_user_session_path %>
+      <%= link_to 'サインアップ', new_user_registration_path %>
     <% end %>
     <%= yield %>
   </body>
