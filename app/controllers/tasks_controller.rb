@@ -24,6 +24,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  #ログインしているユーザのみできるように条件分岐
   def edit
     @task = Task.find(params[:id])
   end
@@ -37,6 +38,7 @@ class TasksController < ApplicationController
     end
   end
 
+    #ログインしているユーザのみできるように条件分岐
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
