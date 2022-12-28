@@ -105,10 +105,13 @@ ja:
   activerecord:
     models:
       task: 'タスク'
+      user: 'ユーザー'
     attributes:
       task:
         title: 'タイトル'
         content: '内容'
+      user:
+        name: '名前'
     errors:
       models:
         care_user:
