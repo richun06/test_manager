@@ -17,6 +17,35 @@ class LabelsController < ApplicationController
     end
   end
 
+  def edit
+    @label = Label.find(params[:id])
+    if @label.user_id == current_user.id
+      render "edit"
+    else
+      redirect_to labels_path
+    end
+  end
+
+  def update
+    @label = Label.find(params[:id])
+    if @label.update(label_params)
+      redirect_to labels_path, notice: "ラベル名を編集しました"
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @label = Label.find(params[:id])
+    if @label.user_id == current_user.id
+      @label.destroy
+      redirect_to labels_path, notice: "ラベルを削除しました"
+    else
+      redirect_to labels_path
+    end
+  end
+
+
   private
 
   def label_params
