@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_28_192252) do
+ActiveRecord::Schema.define(version: 2022_12_31_075859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,6 @@ ActiveRecord::Schema.define(version: 2022_12_28_192252) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id"
-    t.bigint "label_id"
-    t.index ["label_id"], name: "index_tasks_on_label_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
@@ -53,6 +51,5 @@ ActiveRecord::Schema.define(version: 2022_12_28_192252) do
   end
 
   add_foreign_key "labels", "users"
-  add_foreign_key "tasks", "labels"
   add_foreign_key "tasks", "users"
 end
