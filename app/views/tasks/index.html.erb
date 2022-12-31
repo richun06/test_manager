@@ -1,12 +1,12 @@
 <h2><%= current_user.name %>さんのタスク一覧</h2>
-<%= link_to "新規作成",new_task_path %>
+<%= link_to "タスク新規作成",new_task_path %>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>ユーザー名</th>
       <th><%= Task.human_attribute_name(:title) %></th>
       <th><%= Task.human_attribute_name(:content) %></th>
-      <th><%= Label.human_attribute_name(:name) %></th>
+      <!-- <th><%#= Label.human_attribute_name(:name) %></th> -->
     </tr>
   </thead>
   <tbody>
@@ -15,9 +15,9 @@
         <td><%= task.user.name %></td>
         <td><%= task.title %></td>
         <td><%= task.content %></td>
-        <% task.labels.each do |label| %>
-          <td><%= label.name %></td>
-        <% end %>
+        <!-- <%# task.labels.each do |label| %>
+          <td><%#= label.name %></td>
+        <%# end %> -->
         <td><%= link_to "詳細",task_path(task.id) %></td>
         <td><%= link_to "編集",edit_task_path(task.id) %></td>
         <td><%= link_to "削除",task_path(task.id), method: :delete %></td>
